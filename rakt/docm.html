@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Registration</title>
+    <style>
+        body {
+            font-size: 25px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+             /* height: 800px; */
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            height: 25px;
+            font-size: 25px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Documents</h1>
+    <div class="container">
+        <form id="rex">
+            <label for="date">Date: <sup style="color: red;">*</sup></label>
+            <input type="text" id="date" name="date" value="">
+
+            <label for="doc_type">Document type:  <sup style="color: red;">*</sup></label>
+            <input type="text" id="doc_type" name="doc_type" >
+
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" >
+
+
+            <label for="image">Upload Document:  <sup style="color: red;">*</sup></label>
+            <input type="file" id="image" name="image" accept="image/*" ><br><br>
+    
+
+            <input type="submit"  href="dash1.html" value="Submit" style="height: max-content;">
+        </form>
+    </div>
+    <script src="./document.js"></script>
+</body>
+</html>

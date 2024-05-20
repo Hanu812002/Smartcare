@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: th="https://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title>Registration Form</title>
+		<style>
+			.error {
+				color: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<h1>Doctor Registration Form</h1>
+		<hr>
+		
+		<form th:action="@{/save}" th:object="${doctor}" method="POST">
+			
+			Name: <input type="text" th:field="*{name}">
+			<span th:if="${#fields.hasErrors('name')}" 
+			th:errors="*{name}"
+			class="error">
+			</span>
+			
+			<br><br>
+			
+			Speciality: <input type="text" th:field="*{speciality}">
+			<span th:if="${#fields.hasErrors('speciality')}" 
+			th:errors="*{speciality}"
+			class="error">
+			</span>
+			
+			<br><br>
+			
+			Education: <input type="text" th:field="*{education}">
+			
+			<br><br>
+			
+			Experience: <input type="text" th:field="*{experience}">
+			
+			<br><br>
+			
+			Location: <input type="text" th:field="*{location}">
+			
+			<br><br>
+			
+			Contact: <input type="text" th:field="*{contact}">
+			<span th:if="${#fields.hasErrors('contact')}" 
+			th:errors="*{contact}"
+			class="error">
+			</span>
+			
+			<br><br>
+			
+			Email: <input type="text" th:field="*{email}">
+			<span th:if="${#fields.hasErrors('email')}" 
+			th:errors="*{email}"
+			class="error">
+			</span>
+			
+			<br><br>
+			
+			Hospital: <input type="text" th:field="*{hospital}">
+			<span th:if="${#fields.hasErrors('hospital')}" 
+			th:errors="*{hospital}"
+			class="error">
+			</span>
+			
+			<br><br>
+			
+			Aadhaar Card: <input type="file" th:field="*{file}">
+			<span th:if="${#fields.hasErrors('file')}" 
+			th:errors="*{file}"
+			class="error">
+			</span>
+			
+			<hr>
+			
+			<input type="submit">
+			
+		</form>
+	</body>
+	
+</html> 

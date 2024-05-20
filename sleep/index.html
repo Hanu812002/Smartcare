@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sleep Hour Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        input[type="time"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sleep Hour Calculator</h1>
+        <label for="wakeTime">Wake-up Time:</label>
+        <input type="time" id="wakeTime">
+
+        <label for="sleepDuration">Desired Sleep Duration (hours):</label>
+        <input type="number" id="sleepDuration" min="1" max="24">
+
+        <button onclick="calculateBedtime()">Calculate</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateBedtime() {
+            const wakeTime = document.getElementById("wakeTime").value;
+            const sleepDuration = parseFloat(document.getElementById("sleepDuration").value);
+            
+            if (wakeTime && !isNaN(sleepDuration)) {
+                const wakeHour = parseInt(wakeTime.split(":")[0]);
+                const wakeMinute = parseInt(wakeTime.split(":")[1]);
+                
+                const bedtimeHour = wakeHour - Math.floor(sleepDuration);
+                const bedtimeMinute = wakeMinute;
+                
+                if (bedtimeHour < 0) {
+                    bedtimeHour += 24;
+                }
+                
+                const bedtime = `${bedtimeHour.toString().padStart(2, '0')}:${bedtimeMinute.toString().padStart(2, '0')}`;
+                
+                document.getElementById("result").textContent = `Recommended Bedtime: ${bedtime}`;
+            } else {
+                document.getElementById("result").textContent = "Please enter valid wake-up time and sleep duration.";
+            }
+        }
+    </script>
+</body>
+</html>

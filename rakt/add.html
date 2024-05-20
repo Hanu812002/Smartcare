@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <title>Doctor Registration</title> -->
+    <style>
+        body {
+            font-size: 25px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+             /* height: 800px; */
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            height: 25px;
+            font-size: 25px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Medical History</h1>
+    <div class="container">
+        <form id="medicalForm">
+            <label for="date">Date: <sup style="color: red;">*</sup></label>
+            <input type="text" id="date" name="date" value="">
+
+            <label for="condition">Condition:  <sup style="color: red;">*</sup></label>
+            <input type="text" id="condition" name="condition" >
+
+
+            <label for="treatment">Treatment: <sup style="color: red;">*</sup></label>
+            <input type="text" id="treatment" name="treatment" >
+
+            <label for="doctor">Doctor:  <sup style="color: red;">*</sup></label>
+            <input type="text" id="doctor" name="doctor" >
+
+    
+
+            <input type="submit"  href="dash1.html" value="Submit" style="height: max-content;">
+        </form>
+        <script src="./Medical.js"></script>
+    </div>
+</body>
+</html>
